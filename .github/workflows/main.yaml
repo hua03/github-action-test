@@ -6,9 +6,16 @@ on:
       - main
 
 jobs:
-  build:
-    runs-on: macos-latest
+  build-windows:
+    runs-on: windows-latest
 
     steps:
       - name: print
-        run: echo "user"
+        run: echo "windows"
+
+  build-ubuntu: 
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: print
+        run: echo "linux" 
