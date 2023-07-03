@@ -6,9 +6,30 @@ on:
       - main
 
 jobs:
-  build-ubuntu: 
+  test: 
     runs-on: ubuntu-latest
-
     steps:
       - name: print
         run: echo "linux" 
+
+  test2: 
+    runs-on: ubuntu-latest
+    needs: [test]
+    steps:
+      - name: print
+        run: echo "linux2" 
+
+  test3: 
+    runs-on: ubuntu-latest
+    needs: [test2]
+    steps:
+      - name: print
+        run: echo "linux2" 
+
+  test4: 
+    runs-on: ubuntu-latest
+    needs: [test3]
+    steps:
+      - name: print
+        run: echo "linux2"
+
